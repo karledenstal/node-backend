@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv-safe'); // use dotenv-safe to have a .env.example file
 const connect = require("./db");
-const articleRoutes = require("./modules/article.routes");
+const articleRoutes = require("./modules/articles/article.routes");
 
 dotenv.config();
 
