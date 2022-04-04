@@ -32,6 +32,8 @@ const createArticle = async (req, res) => {
 
 const updateArticle = async (req, res) => {
   try {
+    const updated = await article.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.status(200).json(updated);
   } catch (e) {
     res.status(500).json(e);
   }
@@ -39,7 +41,7 @@ const updateArticle = async (req, res) => {
 
 const deleteArticle = async (req, res) => {
   try {
-    await article.deleteOne(req.params.id);
+    await article.findByIdAndDelete(req.params.id);
     res.status(200).json("Successfully deleted article");
   } catch (e) {
     res.status(500).json(e);
@@ -51,4 +53,5 @@ module.exports = {
   getSingleArticle,
   createArticle,
   deleteArticle,
+  updateArticle,
 };

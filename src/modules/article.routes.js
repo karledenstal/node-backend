@@ -8,6 +8,7 @@ router
 router
   .route("/:id")
   .get(articleController.getSingleArticle)
+  .put(articleController.updateArticle)
   .delete(articleController.deleteArticle);
 
 module.exports = router;
