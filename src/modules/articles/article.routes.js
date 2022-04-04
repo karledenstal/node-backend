@@ -1,12 +1,12 @@
-const router = require("express").Router();
-const articleController = require("./article.controller");
+const router = require('express').Router();
+const articleController = require('./article.controller');
 
 router
-  .route("/")
+  .route('/')
   .get(articleController.getAllArticles)
   .post(articleController.createArticle);
 router
-  .route("/:id")
+  .route('/:id')
   .get(articleController.getSingleArticle)
   .put(articleController.updateArticle)
   .delete(articleController.deleteArticle);
